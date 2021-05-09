@@ -1,20 +1,24 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Bookworm App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- Home page with images and three buttons. Straight forward and easy to navigate-->
+
+  <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/93737af0-2d8c-419d-8b6c-a128a96b8ed7/dd4eq2l-022652b0-1b2a-4b74-8080-ee5efbd5a312.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzkzNzM3YWYwLTJkOGMtNDE5ZC04YjZjLWExMjhhOTZiOGVkN1wvZGQ0ZXEybC0wMjI2NTJiMC0xYjJhLTRiNzQtODA4MC1lZTVlZmJkNWEzMTIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._2PPdUTG9AAeI5J5nm4nJb8GjRvDQLnkk8mDQDl5MN8">
+
+  <ion-list style="text-align:center">
+    <ion-button expand="block" [routerLink]="['/page1']" routerDirection="forward">Thesaurus</ion-button>
+    <ion-button expand="block" [routerLink]="['/dictionary']" routerDirection="forward">Dictionary</ion-button>
+    <ion-button expand="block" [routerLink]="['/save-def']" routerDirection="forward">Saved Word</ion-button>
+    <ion-button expand="block" [routerLink]="['/nightlight']" routerDirection="forward">Reading Light</ion-button>
+  </ion-list>
+
+  <img src="https://www.denisemcdonagh.com/wp-content/uploads/2018/02/GMIT-LOGO.jpg">
+ 
 </ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Dictionary</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar color = "primary">
+    <ion-title>Enter a word</ion-title>
+  </ion-toolbar>
+
+  <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchChanged($event)"></ion-searchbar>  <!-- Data binding at work -->
+
+  <ion-card-title>{{prevSearch}}</ion-card-title> <!--String interpolation {{prevSearch}}-->
+
+  <!-- Ion card to give a clean display for the user with a loop to display all objects -->
+ <ion-card *ngFor="let words of dictionaryData">
+  <ion-card-header>
+    
+    <ion-card-subtitle>{{searchTerm}}</ion-card-subtitle>
+    <ion-card-title>{{words.fl}}</ion-card-title>
+  </ion-card-header>
+  
+  <ion-card-content>
+    {{words.shortdef}}
+  </ion-card-content>
+
+</ion-card>
+
+ <!-- When radio clicked, this will assign a local variable to the word searched -->
+<ion-radio-group [(ngModel)]="prevSearch">
+  <ion-item >
+    <ion-label>Remember for later</ion-label>
+    <ion-radio value="{{searchTerm}}"></ion-radio>
+  </ion-item>
+</ion-radio-group>
+
+<!-- Sending the now newly assigned variable to local storage -->
+<ion-button expand="block" (click)="updateSave()">Save and exit</ion-button>
+
+</ion-content>
